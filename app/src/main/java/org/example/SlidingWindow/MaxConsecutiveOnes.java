@@ -45,9 +45,22 @@ public class MaxConsecutiveOnes {
         }
         return maxCount;
     }
-//    public static int findMaxConsecutiveOnesReplacingKZero3(int[] nums, int k){
-//
-//    }
+    public static int findMaxConsecutiveOnesReplacingKZero3(int[] nums, int k){
+        int maxCount = 0;
+        int l = 0, r = 0;
+        int countZero = 0;
+        while(r < nums.length) {
+            if(nums[r] == 0) countZero++;
+            if(countZero <= k) {
+                maxCount = Math.max(maxCount, r -l +1);
+            } else {
+                l++;
+            }
+            r++;
+        }
+
+        return maxCount;
+    }
 
 
 }
