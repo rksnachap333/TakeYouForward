@@ -2,7 +2,7 @@ package org.example.BinarySearchTree.PracticeProblem;
 
 import org.example.BinarySearchTree.Node;
 
-public class CeilOfNodeInBST {
+public class FloorOfNodeInBST {
 
     public static void runner() {
         Node root = new Node(10);
@@ -19,23 +19,24 @@ public class CeilOfNodeInBST {
         root.getRight().setLeft(new Node(11));
         root.getRight().setRight(new Node(14));
 
-        System.out.println("Ceiling of 8 in BST ==="+getCeilOfNode(root, 8));
+        System.out.println("Floor of 8 in BST ==="+getFloor(root, 8));
     }
 
-    private static int getCeilOfNode(Node root, int key) {
-        int ceil = -1;
+    private static int getFloor(Node root, int key) {
+        int floor = -1;
         while(root != null) {
             if(root.getData() == key){
-                ceil = key;
-                return ceil;
+                floor = root.getData();
+                return floor;
             }
-            if(key > root.getData()){
+            if(key > root.getData()) {
+                floor = root.getData();
                 root = root.getRight();
-            } else{
-                ceil = root.getData();
+            } else {
                 root = root.getLeft();
             }
         }
-        return ceil;
+
+        return floor;
     }
 }
