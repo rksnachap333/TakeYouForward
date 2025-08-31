@@ -15,5 +15,9 @@ public class Main {
         CountOccurrencesInSortedArray.runner();
         SearchElementInRotatedSortedArray.runner();
         Test.runner();
+        FindMinInRotatedArray.runner();
+        FindHowManyTimeArrayRotated.runner();
+        SearchSingleElement.runner();
+        PeakElement.runner();
     }
 }
